@@ -48,7 +48,8 @@ IBus bus = new BusBuilder()
     .CreateLocalQueuesAutomatically()
     .EnlistInAmbientTransactions()
     .AutoDistributeOnSend()
-	.JsonSerialization()
+    .JsonSerialization()
+    .TimeToBeReceived(TimeSpan.FromMinutes(1))
     .CreateBus();
 	
 // create your message type
